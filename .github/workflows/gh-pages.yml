@@ -7,8 +7,28 @@ on:
 
 jobs:
   deploy:
-    uses: importantimport/.github/.github/workflows/pnpm-gh-pages.yml@main
-    permissions:
-      contents: write
-    with:
-      publish_dir: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 'lts/*'
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build project
+        run: pnpm run build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: build  
+          publish_branch: gh-pages 
