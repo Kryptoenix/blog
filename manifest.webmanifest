@@ -5,30 +5,30 @@
   "icons": [
     {
       "sizes": "192x192",
-      "src": "https://urara-demo.netlify.app/assets/any@192.png",
+      "src": "https://urara-demo.netlify.app/blog/assets/any@192.png",
       "type": "image/png",
       "purpose": "any"
     },
     {
       "sizes": "512x512",
-      "src": "https://urara-demo.netlify.app/assets/any@512.png",
+      "src": "https://urara-demo.netlify.app/blog/assets/any@512.png",
       "type": "image/png",
       "purpose": "any"
     },
     {
       "sizes": "192x192",
-      "src": "https://urara-demo.netlify.app/assets/maskable@192.png",
+      "src": "https://urara-demo.netlify.app/blog/assets/maskable@192.png",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
       "sizes": "512x512",
-      "src": "https://urara-demo.netlify.app/assets/maskable@512.png",
+      "src": "https://urara-demo.netlify.app/blog/assets/maskable@512.png",
       "type": "image/png",
       "purpose": "maskable"
     }
   ],
-  "id": "https://urara-demo.netlify.app/",
+  "id": "https://urara-demo.netlify.app/blog/",
   "lang": "en-US",
   "name": "Urara",
   "orientation": "portrait",
