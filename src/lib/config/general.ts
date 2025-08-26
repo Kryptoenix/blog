@@ -2,6 +2,10 @@ import type { DateConfig, FeedConfig, FooterConfig, HeadConfig, HeaderConfig, Th
 
 export const theme: ThemeConfig = [
   {
+    name: 'forest',
+    text: '🌲 Forest',
+  },
+  {
     name: 'cmyk',
     text: '🖨 Light',
   },
@@ -10,70 +14,44 @@ export const theme: ThemeConfig = [
     text: '🧛 Dark',
   },
   {
-    name: 'valentine',
-    text: '🌸 Valentine',
-  },
-  {
-    name: 'aqua',
-    text: '💦 Aqua',
-  },
-  {
     name: 'synthwave',
     text: '🌃 Synthwave',
   },
-  {
-    name: 'night',
-    text: '🌃 Night',
-  },
-  {
-    name: 'lofi',
-    text: '🎶 Lo-Fi',
-  },
-  {
-    name: 'lemonade',
-    text: '🍋 Lemonade',
-  },
-  {
-    name: 'cupcake',
-    text: '🧁 Cupcake',
-  },
-  {
-    name: 'garden',
-    text: '🏡 Garden',
-  },
-  {
-    name: 'retro',
-    text: '🌇 Retro',
-  },
-  {
-    name: 'black',
-    text: '🖤 Black',
-  },
 ]
 
-export const head: HeadConfig = {}
+export const head: HeadConfig = {
+  custom: ({ dev, page, post }) =>
+    dev
+      ? []
+      : [
+          // IndieAuth
+          '<link rel="authorization_endpoint" href="https://indieauth.com/auth">',
+          '<link rel="token_endpoint" href="https://tokens.indieauth.com/token">',
+        ],
+  me: ['https://github.com/Kryptoenix'],
+}
 
 export const header: HeaderConfig = {
   nav: [
+
     {
-      link: '/hello-world',
-      text: 'Get Started',
-    },
-    {
-      link: '/hello-world/elements',
-      text: 'Elements',
+      link: '/blog/about',
+      text: 'About',
     },
   ],
+  search: {
+    provider: 'google',
+  },
 }
 
 export const footer: FooterConfig = {
   nav: [
     {
-      link: '/atom.xml',
+      link: '/blog/atom.xml', // Updated path
       text: 'Feed',
     },
     {
-      link: '/sitemap.xml',
+      link: '/blog/sitemap.xml', // Updated path
       text: 'Sitemap',
     },
   ],

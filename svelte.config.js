@@ -1,3 +1,4 @@
+// svelte.config.js
 import adapterAuto from '@sveltejs/adapter-auto'
 import adapterNode from '@sveltejs/adapter-node'
 import adapterStatic from '@sveltejs/adapter-static'
@@ -6,7 +7,7 @@ import { mdsvex } from 'mdsvex'
 
 import mdsvexConfig from './mdsvex.config.js'
 
-const adapter = {
+const adapters = {
   auto: adapterAuto(),
   node: adapterNode(),
   static: adapterStatic({
@@ -22,16 +23,18 @@ export default {
   kit: {
     adapter:
       process.env.ADAPTER
-        // @ts-expect-error adapter types
-        ? adapter[process.env.ADAPTER.toLowerCase()]
+        ? adapters[process.env.ADAPTER.toLowerCase()]
         : Object.keys(process.env).some(key => ['NETLIFY', 'VERCEL'].includes(key))
-          ? adapter.auto
-          : adapter.static,
+          ? adapters.auto
+          : adapters.static,
     csp: {
       directives: {
         'style-src': ['self', 'unsafe-inline', 'https://giscus.app'],
       },
       mode: 'auto',
+    },
+    paths: {
+      base: '/blog',
     },
     prerender: {
       handleMissingId: 'warn',

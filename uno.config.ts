@@ -8,6 +8,12 @@ export default defineConfig({
     presetTagify({
       extraProperties: (matched: string) => (matched.startsWith('i-') ? { display: 'inline-block' } : {}),
     }),
-    presetIcons({ scale: 1.5 }),
+    presetIcons({
+      cdn: 'https://esm.sh/',
+      collections: {
+
+      },
+      scale: 1.5,
+    }),
   ],
 })

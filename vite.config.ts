@@ -11,6 +11,7 @@ import tailwindConfig from './tailwind.config'
 import unoConfig from './uno.config'
 
 export default defineConfig({
+  base: '/blog',
   css: {
     postcss: {
       plugins: [TailwindCSS(tailwindConfig), LightningCSS()],
@@ -24,7 +25,7 @@ export default defineConfig({
     pwa({
       manifest: false,
       registerType: 'autoUpdate',
-      scope: '/',
+      scope: '/blog',
       workbox: {
         globIgnores: ['**/sw*', '**/workbox-*'],
         globPatterns: ['posts.json', '**/*.{js,css,html,svg,ico,png,webp,avif}'],

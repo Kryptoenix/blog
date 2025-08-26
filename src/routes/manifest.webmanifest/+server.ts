@@ -5,6 +5,7 @@ import type { RequestHandler } from './$types'
 
 export const prerender = true
 export const trailingSlash = 'never'
+
 export const GET: RequestHandler = () =>
   new Response(
     JSON.stringify(
@@ -18,13 +19,13 @@ export const GET: RequestHandler = () =>
             .map(icon => ({ ...icon, purpose: 'any' })),
           ...Object.values(maskable).map(icon => ({ ...icon, purpose: 'maskable' })),
         ],
-        id: `${site.protocol + site.domain}/`,
+        id: `${site.protocol}${site.domain}/blog/`,
         lang: site.lang,
         name: site.title,
         orientation: 'portrait',
-        scope: '/',
+        scope: '/blog/',
         short_name: site.title,
-        start_url: '/',
+        start_url: '/blog/',
         theme_color: site.themeColor,
       },
       null,

@@ -20,7 +20,7 @@ const remarkUraraFm
         data.fm = {}
       // Generate slug & path
       data.fm.slug = filepath
-      data.fm.path = join(dir, `/${name}`.replace('/+page', '').replace('.svelte', ''))
+      data.fm.path = join(`/blog${dir}`, `/${name}`.replace('/+page', '').replace('.svelte', ''))
       // Generate ToC
       if (data.fm.toc !== false) {
         const [slugs, toc] = [new Slugger(), []]
@@ -69,8 +69,8 @@ export default {
           code,
           lang,
           fence ?? {},
-          { themeName: 'material-default' },
-          await createShikiHighlighter({ theme: 'material-default' }),
+          { themeName: 'monokai' },
+          await createShikiHighlighter({ theme: 'monokai' }),
           twoslash,
         ),
       )}\` }`

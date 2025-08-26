@@ -8,6 +8,15 @@
   import { fly } from 'svelte/transition'
 
   export let post: Urara.Post
+
+  import {onMount} from 'svelte'
+  import {copyCode} from '$lib/utils/copy'
+
+  onMount(()=>{
+    copyCode();
+
+
+  });
 </script>
 
 <Head {post} />
