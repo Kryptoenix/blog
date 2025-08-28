@@ -64,7 +64,7 @@
         {#if headerConfig.nav}
           <Nav nav={headerConfig.nav} {path} {pin} {scrollY} {title} />
         {/if}
-        <a class='btn btn-ghost normal-case text-lg' href='/'>{site.title}</a>
+        <a class='btn btn-ghost normal-case text-lg' href='/blog'>{site.title}</a>
       </div>
       <div class='navbar-end'>
         {#if headerConfig.search}
