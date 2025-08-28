@@ -38,7 +38,13 @@ export default {
     },
     prerender: {
       handleMissingId: 'warn',
+      handleHttpError: 'warn'
+      // handleHttpError: ({ path, referrer, message }) => {
+      //   if (path === '/') return; // ignore bad "/" references
+      //   throw new Error(message);
+      // }
     },
   },
   preprocess: [mdsvex(mdsvexConfig), vitePreprocess()],
+  
 }

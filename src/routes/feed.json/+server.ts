@@ -16,7 +16,7 @@ const render = (posts = genPosts({ filterUnlisted: true, postHtml: true, postLim
   ],
   description: site.description,
   favicon: favicon?.src,
-  feed_url: `${site.protocol + site.domain}/feed.json`,
+  feed_url: `${site.protocol + site.domain}/blog/feed.json`,
   home_page_url: site.protocol + site.domain,
   hubs: feed.hubs?.map(hub => ({
     type: 'WebSub',

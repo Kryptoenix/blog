@@ -25,7 +25,7 @@ export default defineConfig({
     pwa({
       manifest: false,
       registerType: 'autoUpdate',
-      scope: '/blog',
+      scope: '/',
       workbox: {
         globIgnores: ['**/sw*', '**/workbox-*'],
         globPatterns: ['posts.json', '**/*.{js,css,html,svg,ico,png,webp,avif}'],
